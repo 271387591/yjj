@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+              http://www.springframework.org/schema/security
+              http://www.springframework.org/schema/security/spring-security-4.0.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.ozstrategy.webapp"/>
+    <http pattern="/resources/**" security="none"/>
+    <http pattern="/html/security/login" security="none"/>
+    <http pattern="/html/web/**" security="none"/>
+
+    <http use-expressions="true"  >
+        <expression-handler ref="expressionHandler"/>
+        <csrf disabled="true"/>
+        <intercept-url pattern="/html/advert/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/html/applicationConfig/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/html/friend/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/html/news/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/html/notice/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/html/user/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/html/role/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/html/assess/**" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/html/leader/**" access="hasRole('ROLE_TENANT')"/>
+        <form-login login-page="/login.jsp"
+                    authentication-failure-url="/login.jsp?error=true"
+                    login-processing-url="/j_security_check"
+                    always-use-default-target="false"
+                    username-parameter="username"
+                    password-parameter="password"
+                    authentication-success-handler-ref="authSuccessLogger"
+                    authentication-failure-handler-ref="authFailLogger"/>
+        <remember-me user-service-ref="userManager" key="e37f4b31-0c45-11dd-bd0b-0800200c9a66"/>
+        <session-management invalid-session-url="/login.jsp" session-fixation-protection="none">
+            <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/login.jsp"/>
+        </session-management>
+    </http>
+    <beans:bean id="authSuccessLogger" class="com.ozstrategy.webapp.security.WebAuthenticationSuccessLoggerHandler">
+    </beans:bean>
+    <beans:bean id="authFailLogger" class="com.ozstrategy.webapp.security.WebAuthenticationFailLoggerHandler">
+    </beans:bean>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="userManager">
+            <password-encoder ref="passwordEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <!-- Override the default password-encoder (SHA) by uncommenting the following and changing the class -->
+    <!-- <bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder"/> -->
+
+    <!--<global-method-security>-->
+        <!--<protect-pointcut expression="execution(* *..service.UserManager.getUsers(..))" access="ROLE_ADMIN"/>-->
+        <!--<protect-pointcut expression="execution(* *..service.UserManager.removeUser(..))" access="ROLE_ADMIN"/>-->
+    <!--</global-method-security>-->
+    <beans:bean id="webSecurityExpressionRoot" class="com.ozstrategy.webapp.security.WebSecurityExpressionRoot"/>
+    <beans:bean id="expressionHandler" class="com.ozstrategy.webapp.security.DefaultWebSecurityExpressionHandler">
+        <beans:property name="root" ref="webSecurityExpressionRoot"/>
+    </beans:bean>
+    <beans:bean id="methodSecurityExpressionHandler" class="com.ozstrategy.webapp.security.SecurityMethodSecurityExpressionHandler">
+        <beans:property name="root" ref="webSecurityExpressionRoot"/>
+    </beans:bean>
+</beans:beans>

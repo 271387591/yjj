@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <table name="t_feature">
+        <column>id</column>
+        <column>description</column>
+        <column>displayName</column>
+        <column>enabled</column>
+        <column>name</column>
+        <column>parentId</column>
+    </table>
+    <table name="t_role">
+        <column>id</column>
+        <column>createDate</column>
+        <column>lastUpdateDate</column>
+        <column>description</column>
+        <column>displayName</column>
+        <column>name</column>
+        <column>enabled</column>
+        <row>
+            <value>1</value>
+            <value><![CDATA[2013-01-22 16:03:26.0]]></value>
+            <value><![CDATA[2014-07-25 14:22:04.0]]></value>
+            <value>超级管理员，具有管理的全部权限</value>
+            <value>超级管理员</value>
+            <value>ROLE_ADMIN</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value><![CDATA[2013-01-22 16:03:26.0]]></value>
+            <value><![CDATA[2013-01-22 16:03:28.0]]></value>
+            <value>领导角色</value>
+            <value>领导角色</value>
+            <value>ROLE_TENANT</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>3</value>
+            <value><![CDATA[2013-01-22 16:03:26.0]]></value>
+            <value><![CDATA[2013-01-22 16:03:28.0]]></value>
+            <value>考核员角色</value>
+            <value>考核员角色</value>
+            <value>ROLE_USER</value>
+            <value>1</value>
+        </row>
+
+
+    </table>
+    <table name="t_rolefeature">
+        <column>featureId</column>
+        <column>roleId</column>
+    </table>
+
+    <table name="t_user">
+        <column>id</column>
+        <column>createDate</column>
+        <column>lastUpdateDate</column>
+        <column>accountExpired</column>
+        <column>accountLocked</column>
+        <column>credentialsExpired</column>
+        <column>enabled</column>
+        <column>gender</column>
+        <column>mobile</column>
+        <column>password</column>
+        <column>nickName</column>
+        <column>username</column>
+        <column>roleId</column>
+        <row>
+            <value>1</value>
+            <value><![CDATA[2013-01-27 11:27:03.0]]></value>
+            <value><![CDATA[2013-01-27 11:27:25.0]]></value>
+            <value>0</value>
+            <value>0</value>
+            <value>0</value>
+            <value>1</value>
+            <value>M</value>
+            <value>18583910581</value>
+            <value>536c0b339345616c1b33caf454454d8b8a190d6c</value>
+            <value>admin</value>
+            <value>admin</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value><![CDATA[2013-01-27 11:27:03.0]]></value>
+            <value><![CDATA[2013-01-27 11:27:25.0]]></value>
+            <value>0</value>
+            <value>0</value>
+            <value>0</value>
+            <value>1</value>
+            <value>M</value>
+            <value>18583910581</value>
+            <value>536c0b339345616c1b33caf454454d8b8a190d6c</value>
+            <value>领导</value>
+            <value>leader</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>3</value>
+            <value><![CDATA[2013-01-27 11:27:03.0]]></value>
+            <value><![CDATA[2013-01-27 11:27:25.0]]></value>
+            <value>0</value>
+            <value>0</value>
+            <value>0</value>
+            <value>1</value>
+            <value>M</value>
+            <value>18583910581</value>
+            <value>536c0b339345616c1b33caf454454d8b8a190d6c</value>
+            <value>考评员1</value>
+            <value>user</value>
+            <value>3</value>
+        </row>
+
+
+    </table>
+    <table name="t_userrole">
+        <column>userId</column>
+        <column>roleId</column>
+        <row>
+            <value>1</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>3</value>
+            <value>3</value>
+        </row>
+
+
+    </table>
+</dataset>

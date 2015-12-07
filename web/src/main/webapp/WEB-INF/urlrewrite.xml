@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN"
+    "http://tuckey.org/res/dtds/urlrewrite3.0.dtd">
+
+<urlrewrite default-match-type="wildcard">
+    <!--<rule>-->
+        <!--<from>/app/register</from>-->
+        <!--<to>/html/user/register</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/login</from>-->
+        <!--<to>/j_security_check</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/portrait</from>-->
+        <!--<to>/html/user/web/portrait</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/updateUser</from>-->
+        <!--<to>/html/user/web/update</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/getHalls</from>-->
+        <!--<to>/html/exhibitionHall/list</to>-->
+    <!--</rule>-->
+    <!--<rule match-type="regex">-->
+        <!--<from>^/app/getHall/([0-9]+)?$</from>-->
+        <!--<to>/html/exhibitionHall/getHall/$1</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/getExhs</from>-->
+        <!--<to>/html/exhibition/list</to>-->
+    <!--</rule>-->
+    <!--<rule match-type="regex">-->
+        <!--<from>^/app/getExh/([0-9]+)?$</from>-->
+        <!--<to>/html/exhibition/getExh/$1</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/getComments</from>-->
+        <!--<to>/html/comment/list</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/comment</from>-->
+        <!--<to>/html/comment/web/save</to>-->
+    <!--</rule>-->
+    <!--<rule match-type="regex">-->
+        <!--<from>^/app/getExhGuide/([0-9]+)?$</from>-->
+        <!--<to>/html/exhGuide/getExhGuide/$1</to>-->
+    <!--</rule>-->
+    <!--<rule match-type="regex">-->
+        <!--<from>^/app/getExhGuideTo/([0-9]+)?$</from>-->
+        <!--<to>/html/exhGuideTo/getExhGuideTo/$1</to>-->
+    <!--</rule>-->
+    <!--<rule match-type="regex">-->
+        <!--<from>^/app/getExhTravel/([0-9]+)?$</from>-->
+        <!--<to>/html/exhTravel/getExhTravel/$1</to>-->
+    <!--</rule>-->
+    <!--<rule match-type="regex">-->
+        <!--<from>^/app/getExhDescription/([0-9]+)?$</from>-->
+        <!--<to>/html/exhDescription/getExhDescription/$1</to>-->
+    <!--</rule>-->
+    <!--<rule match-type="regex">-->
+        <!--<from>^/app/getExhSponsor/([0-9]+)?$</from>-->
+        <!--<to>/html/exhSponsor/getExhSponsor/$1</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/getExhNews</from>-->
+        <!--<to>/html/exhNews/list</to>-->
+    <!--</rule>-->
+    <!--<rule>-->
+        <!--<from>/app/getExhTrade</from>-->
+        <!--<to>/html/exhNews/getExhTrade</to>-->
+    <!--</rule>-->
+
+</urlrewrite>
